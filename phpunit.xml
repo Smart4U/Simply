@@ -1,0 +1,18 @@
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+    <testsuites>
+        <testsuite name="Simply">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">tests</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="tests/Coverage/report.html" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-clover" target="tests/Coverage/report.xml"/>
+    </logging>
+</phpunit>

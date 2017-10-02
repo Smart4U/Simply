@@ -1,0 +1,14 @@
+.idea
+*.env
+!example.env
+
+composer.lock
+composer.phar
+
+vendor
+node_modules
+
+tests/Coverage
+
+
+
