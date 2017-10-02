@@ -2,11 +2,11 @@
 
 namespace Tests;
 
-use Bundles\Contact\ContactBundle;
 use Core\App;
 
 use GuzzleHttp\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
+use Tests\Feature\Bundles\Contact\ContactBundle;
 
 class AppTest extends TestCase
 {
@@ -24,10 +24,10 @@ class AppTest extends TestCase
         $app = new App([
             ContactBundle::class
         ]);
-        $request = new ServerRequest('GET','/contact');
+        $request = new ServerRequest('GET','/test-contact');
         $response = $app->run($request);
 
-        $this->assertContains('<h1>Contact</h1>', (string)$response->getBody());
+        $this->assertContains('test contact loaded', (string)$response->getBody());
         $this->assertSame(200, $response->getStatusCode());
 
     }

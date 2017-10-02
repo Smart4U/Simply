@@ -3,8 +3,8 @@
 namespace Bundles\Contact;
 
 use Core\Routing\Router;
-use GuzzleHttp\Psr7\Response;
-use Psr\Http\Message\ResponseInterface;
+use Core\Renderer\Renderer;
+
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
@@ -16,11 +16,18 @@ class ContactBundle
 {
 
     /**
+     * @var Renderer
+     */
+    private $renderer;
+
+    /**
      * ContactBundle constructor.
      * @param Router $router
      */
-    public function __construct(Router $router)
+    public function __construct(Router $router, Renderer $renderer)
     {
+        $this->renderer = $renderer;
+        $this->renderer->addViewPath('contact', __DIR__ . '/Views');
         $router->get('/contact', [$this, 'index'], 'contact.index');
     }
 
@@ -31,6 +38,6 @@ class ContactBundle
      */
     public function index(ServerRequestInterface $request)
     {
-        return '<h1>Contact</h1>';
+        return $this->renderer->render('@contact/index.php');
     }
 }

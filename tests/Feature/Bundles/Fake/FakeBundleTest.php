@@ -1,6 +1,6 @@
 <?php
 
-namespace Feature\Bundles;
+namespace Tests\Feature\Bundles\Fake;
 
 
 use Core\App;
@@ -13,7 +13,7 @@ class FakeBundle {
 
     public function __construct(Router $router)
     {
-        $router->get('/fakebundle', function() { return []; }, 'fakebundle');
+        $router->get('/fakebundle', function() { ['is_not_correct_response']; }, 'fakebundle');
     }
 
 }

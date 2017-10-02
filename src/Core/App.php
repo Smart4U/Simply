@@ -2,6 +2,7 @@
 
 namespace Core;
 
+use Core\Renderer\Renderer;
 use Core\Routing\Router;
 use GuzzleHttp\Psr7\Response;
 
@@ -21,6 +22,11 @@ class App
     private $router;
 
     /**
+     * @var Renderer
+     */
+    private $renderer;
+
+    /**
      * @var array
      */
     private $bundles = [];
@@ -34,8 +40,11 @@ class App
     {
         $this->router = new Router();
 
+        $this->renderer = new Renderer();
+        $this->renderer->addViewPath(dirname(dirname(__DIR__)) . '/resources/views');
+
         foreach ($bundles as $bundle) {
-            $this->bundles[] = new $bundle($this->router);
+            $this->bundles[] = new $bundle($this->router, $this->renderer);
         }
     }
 
