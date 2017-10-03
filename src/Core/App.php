@@ -6,6 +6,7 @@ use Core\Renderer\TwigRenderer;
 use Core\Routing\Router;
 use GuzzleHttp\Psr7\Response;
 
+use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -32,18 +33,21 @@ class App
     private $bundles = [];
 
     /**
-     * Application constructor.
-     *
+     * @var ContainerInterface
+     */
+    private $container;
+
+
+    /**
+     * App constructor.
+     * @param ContainerInterface $container
      * @param array $bundles
      */
-    public function __construct(array $bundles = [])
+    public function __construct(ContainerInterface $container, array $bundles = [])
     {
-        $this->router = new Router();
-
-        $this->renderer = new TwigRenderer(dirname(dirname(__DIR__)) . '/resources/views');
-
+        $this->container = $container;
         foreach ($bundles as $bundle) {
-            $this->bundles[] = new $bundle($this->router, $this->renderer);
+            $this->bundles[] = $container->get($bundle);
         }
     }
 
@@ -59,18 +63,23 @@ class App
             return new Response(301, ['Location' => substr($uri, 0, -1)], null, 1.1);
         }
 
-        $route = $this->router->match($request);
+        $route = $this->container->get(Router::class)->match($request);
 
         if (is_null($route)) {
             return new Response(404, [], 'Not Found ;(');
         }
 
-        foreach ($route->getRouteParams() as $key => $parameter) {
-            $request = $request->withAttribute($key, $parameter);
+        $params = $route->getRouteParams();
+
+        $request = array_reduce(array_keys($params), function ($request, $key) use ($params) {
+            return $request->withAttribute($key, $params[$key]);
+        }, $request);
+
+        $callback = $route->getRouteCallback();
+        if (is_string($callback)) {
+            $callback = $this->container->get($callback);
         }
-
-        $response = call_user_func_array($route->getRouteCallback(), [$request]);
-
+        $response = call_user_func_array($callback, [$request]);
 
         if ($response instanceof ResponseInterface) {
             return $response;

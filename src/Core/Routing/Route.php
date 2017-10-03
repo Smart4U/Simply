@@ -26,10 +26,10 @@ class Route
     /**
      * Route constructor.
      * @param string $name
-     * @param callable $callback
+     * @param callable|string $callback
      * @param array $params
      */
-    public function __construct(string $name, callable $callback, array $params = [])
+    public function __construct(string $name, $callback, array $params = [])
     {
         $this->name = $name;
         $this->callback = $callback;
@@ -47,9 +47,9 @@ class Route
 
     /**
      * Get the callback
-     * @return callable
+     * @return callable|string
      */
-    public function getRouteCallback(): callable
+    public function getRouteCallback()
     {
         return $this->callback;
     }
