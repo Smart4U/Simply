@@ -2,8 +2,8 @@
 
 namespace Bundles\Contact;
 
+use Core\Renderer\RendererInterface;
 use Core\Routing\Router;
-use Core\Renderer\Renderer;
 
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -24,7 +24,7 @@ class ContactBundle
      * ContactBundle constructor.
      * @param Router $router
      */
-    public function __construct(Router $router, Renderer $renderer)
+    public function __construct(Router $router, RendererInterface $renderer)
     {
         $this->renderer = $renderer;
         $this->renderer->addViewPath('contact', __DIR__ . '/Views');
@@ -38,6 +38,6 @@ class ContactBundle
      */
     public function index(ServerRequestInterface $request)
     {
-        return $this->renderer->render('@contact/index.php');
+        return $this->renderer->render('test.twig');
     }
 }

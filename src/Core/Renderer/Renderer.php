@@ -2,7 +2,7 @@
 
 namespace Core\Renderer;
 
-class Renderer
+class Renderer implements RendererInterface
 {
 
 
@@ -17,6 +17,13 @@ class Renderer
      * @var array
      */
     private $globals = [];
+
+    public function __construct(?string $defaultPath = null)
+    {
+        if (!is_null($defaultPath)) {
+            $this->addViewPath($defaultPath);
+        }
+    }
 
     /**
      * Add new folder path
