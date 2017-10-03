@@ -89,4 +89,12 @@ class App
 
         throw new \RuntimeException('This response does not correct. Normally the response must be an instance of ResponseInterface.');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    public function getContainer(): ContainerInterface
+    {
+        return $this->container;
+    }
 }

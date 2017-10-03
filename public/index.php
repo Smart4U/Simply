@@ -1,9 +1,10 @@
 <?php
 
-require '../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 $bundles = [
-    \Bundles\Contact\ContactBundle::class
+    \Bundles\Contact\ContactBundle::class,
+    \Bundles\Blog\BlogBundle::class
 ];
 
 $builder = new \DI\ContainerBuilder();
@@ -18,4 +19,6 @@ $container = $builder->build();
 
 $app = new \Core\App($container, $bundles);
 
-\Http\Response\send($app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals()));
+if (php_sapi_name() !== 'cli') {
+    \Http\Response\send($app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals()));
+}

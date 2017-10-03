@@ -1,0 +1,108 @@
+<div class="site">
+    <header id="header" class="header header-fix header-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="header-top-info">
+                        <span> <i class="fa fa-mobile km-phone-top"></i>0673438766</span>
+                        <span> <i class="fa fa-envelope-o"></i>contact@mydomain.com</span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="header-top-social-icons text-right">
+                        <a class="link" href="#"><i class="fa fa-facebook"></i></a>
+                        <a class="link" href="#"><i class="fa fa-twitter"></i></a>
+                        <a class="link" href="#"><i class="fa fa-instagram"></i></a>
+                        <a class="link" href="#"><i class="fa fa-youtube"></i></a>
+                        <a class="link" href="#"><i class="fa fa-linkedin"></i></a>
+                        <a class="link" href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-menu main-menu-desktop pull-left">
+                        <ul class="menu">
+                            <li class="active mega">
+                                <a href="{{ url('page.homepage') }}">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('page.services') }}">Services</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('gallery.index') }}">Galerie</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="logo">
+                        <a href="{{ url('page.homepage') }}">
+                            <img src="images/logo.png" alt="Kameleon" class="logo" />
+                            <img src="images/logo.png" alt="Kameleon" class="logo-scroll" />
+                        </a>
+                        <div class="mobile-icon">
+                            <div class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-menu main-menu-desktop pull-right">
+                        <ul class="menu">
+                            <li>
+                                <a href="{{ url('blog.index', {page: 1}) }}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{  url('page.about') }}">A-Propos</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('contact.index') }}">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="header-buttons">
+                            <div class="search-link additional-link">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <div class="widgetarea-link additional-link">
+                                <div class="widgetarea-link-inner">
+                                    <div class="menu-bar">
+                                        <span class="bar bar-1"></span>
+                                        <span class="bar bar-2"></span>
+                                        <span class="bar bar-3"></span>
+                                        <span class="bar bar-4"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-menu main-menu-mobile">
+                        <ul class="menu">
+                            <li class="active">
+                                <a href="{{ url('page.homepage') }}">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('page.services') }}">Service</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('gallery.index') }}">Galerie</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('blog.index', {page: 1}) }}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('page.about') }}">A-Propos</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('contact.index') }}">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="header-buttons">
+                            <div class="search-link additional-link">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
