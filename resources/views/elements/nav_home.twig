@@ -24,18 +24,18 @@
                     <div class="main-menu main-menu-desktop pull-left">
                         <ul class="menu">
                             <li class="active mega">
-                                <a href="{{ url('page.homepage') }}">Accueil</a>
+                                <a href="#">Accueil</a>
                             </li>
                             <li>
-                                <a href="{{ url('page.services') }}">Services</a>
+                                <a href="#">Services</a>
                             </li>
                             <li>
-                                <a href="{{ url('gallery.index') }}">Galerie</a>
+                                <a href="#">Galerie</a>
                             </li>
                         </ul>
                     </div>
                     <div id="logo">
-                        <a href="{{ url('page.homepage') }}">
+                        <a href="#">
                             <img src="images/logo.png" alt="Kameleon" class="logo" />
                             <img src="images/logo.png" alt="Kameleon" class="logo-scroll" />
                         </a>
@@ -50,13 +50,13 @@
                     <div class="main-menu main-menu-desktop pull-right">
                         <ul class="menu">
                             <li>
-                                <a href="{{ url('blog.index', {page: 1}) }}">Blog</a>
+                                <a href="{{ path('blog.index') }}">Blog</a>
                             </li>
                             <li>
-                                <a href="{{  url('page.about') }}">A-Propos</a>
+                                <a href="#">A-Propos</a>
                             </li>
                             <li>
-                                <a href="{{ url('contact.index') }}">Contact</a>
+                                <a href="{{ path('contact.index') }}">Contact</a>
                             </li>
                         </ul>
                         <div class="header-buttons">
@@ -78,22 +78,22 @@
                     <div class="main-menu main-menu-mobile">
                         <ul class="menu">
                             <li class="active">
-                                <a href="{{ url('page.homepage') }}">Accueil</a>
+                                <a href="#">Accueil</a>
                             </li>
                             <li>
-                                <a href="{{ url('page.services') }}">Service</a>
+                                <a href="#">Service</a>
                             </li>
                             <li>
-                                <a href="{{ url('gallery.index') }}">Galerie</a>
+                                <a href="#">Galerie</a>
                             </li>
                             <li>
-                                <a href="{{ url('blog.index', {page: 1}) }}">Blog</a>
+                                <a href="{{ path('blog.index') }}">Blog</a>
                             </li>
                             <li>
-                                <a href="{{ url('page.about') }}">A-Propos</a>
+                                <a href="#">A-Propos</a>
                             </li>
                             <li>
-                                <a href="{{ url('contact.index') }}">Contact</a>
+                                <a href="{{ path('contact.index') }}">Contact</a>
                             </li>
                         </ul>
                         <div class="header-buttons">

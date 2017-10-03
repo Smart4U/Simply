@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div id="logo">
-                        <a href="{{ url('page.homepage') }}">
+                        <a href="/">
                             <img src="images/logo.png" alt="Kameleon" class="logo">
                             <img src="images/logo.png" alt="Kameleon" class="logo-scroll">
                         </a>
@@ -52,22 +52,22 @@
                         </div>
                         <ul class="menu">
                             <li class="">
-                                <a href="{{ url('page.homepage') }}">Accueil</a>
+                                <a href="#">Accueil</a>
                             </li>
                             <li>
-                                <a href="{{ url('page.services') }}">Services</a>
-                            </li>
-                            <li class="active">
-                                <a href="{{ url('gallery.index') }}">Galerie</a>
+                                <a href="#">Services</a>
                             </li>
                             <li>
-                                <a href="{{ url('blog.index', {page: 1}) }}">Blog</a>
+                                <a href="#">Galerie</a>
                             </li>
                             <li>
-                                <a href="{{ url('page.about') }}">A-Propos</a>
+                                <a href="{{ path('blog.index') }}">Blog</a>
                             </li>
                             <li>
-                                <a href="{{ url('contact.index') }}">Contact</a>
+                                <a href="#">A-Propos</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contact.index') }}">Contact</a>
                             </li>
                         </ul>
                     </div>

@@ -1,1 +1,35 @@
-{% block content %}{% endblock %}
+<!doctype html>
+<html lang="{!{ language() }!}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}{% endblock %} - title</title>
+    <![endif]-->
+    {% block style %}{% endblock %}
+</head>
+<body>
+{% include 'elements/loader.twig' %}
+{% include 'elements/search.twig' %}
+{% include 'elements/widget.twig' %}
+<div class="site">
+
+    {% block nav %}
+        {% include 'elements/nav.twig' %}
+    {% endblock %}
+
+    <div id="main">
+
+        {% block content %}{% endblock %}
+
+    </div>
+
+    {% include 'elements/footer.twig' %}
+
+</div>
+
+{% block script %}{% endblock %}
+</body>
+</html>

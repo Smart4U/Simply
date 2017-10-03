@@ -2,8 +2,8 @@
 
 namespace Bundles\Contact;
 
-use Core\Renderer\RendererInterface;
 use Core\Routing\Router;
+use Core\Renderer\RendererInterface;
 
 /**
  * Class ContactBundle
@@ -14,6 +14,10 @@ class ContactBundle
 {
 
     const DEFINITIONS = __DIR__ . '/settings.php';
+
+    const MIGRATIONS = null;
+
+    const SEEDS = null;
 
     /**
      * ContactBundle constructor.

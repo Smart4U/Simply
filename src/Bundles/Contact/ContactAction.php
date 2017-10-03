@@ -22,6 +22,6 @@ class ContactAction
 
     public function index(ServerRequestInterface $request)
     {
-        return $this->renderer->render('index.twig');
+        return $this->renderer->render('@contact/index.twig');
     }
 }

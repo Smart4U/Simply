@@ -1,0 +1,133 @@
+{% extends "default.twig" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="section section-bg-33 pt-26 pb-26">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="section-title uppercase white text-center fw-normal fz-56 lh-68 ls-6 mb-3">{{ post.title }}</h2>
+                    <p class="text-center fw-600 fz-14 white">
+                        {{ post.author }} | Food, Workshop | {{ post.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-body">
+                        {{ post.content | nl2br }}
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                        <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                        <blockquote><p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word “and” and the Little Blind Text should turn around and return to its own, safe country.</p></blockquote>
+                        <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using her.</p>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                        <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline</p>
+                    </div>
+                    <div class="single-tag">Tags : <a href="#">Coffee</a>, <a href="#">Workshop</a></div>
+                    <div class="single-share social-share-bg">
+                        <a href="#" class="facebook">
+                            <i class="fa fa-facebook"></i>
+                            <span class="tooltip">Share on Facebook</span>
+                        </a>
+                        <a href="#" class="twitter">
+                            <i class="fa fa-twitter"></i>
+                            <span class="tooltip">Share on Twitter</span>
+                        </a>
+                        <a href="#" class="google">
+                            <i class="fa fa-google-plus"></i>
+                            <span class="tooltip">Share on Google+</span>
+                        </a>
+                        <a href="#" class="linkedin">
+                            <i class="fa fa-linkedin-square"></i>
+                            <span class="tooltip">Share on Linkedin</span>
+                        </a>
+                        <a href="#" class="pinterest">
+                            <i class="fa fa-pinterest"></i>
+                            <span class="tooltip">Share on Pinterest</span>
+                        </a>
+                        <a href="#" class="reddit">
+                            <i class="fa fa-reddit"></i>
+                            <span class="tooltip">Share on Reddit</span>
+                        </a>
+                    </div>
+                    <div class="single-author">
+                        <div class="author-avatar">
+                            <img alt="" src="images/avatar/user.png" />
+                        </div>
+                        <div class="author-desc">
+                            <a class="author-name" href="#">Admin</a>
+                            <p>We create unique and premium HTML Template. Kameleon theme is one of our best work. We are doing our best to make it one of the top notch HTML Template in the world &amp; we believe we can do that!</p>
+                        </div>
+                    </div>
+                    <div class="related-post">
+                        <div class="text-center mb-6">
+                            <div class="related-title">
+                                RELATED PROJECTS
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="blog-item style-7">
+                                <a href="blog-detail.html">
+                                    <div class="blog-media">
+                                        <img src="images/blog/blog_1.jpg" alt="">
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3>Eligendi Cumque</h3>
+                                        <p>July 24th, 2016</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="blog-item style-7">
+                                <a href="blog-detail.html">
+                                    <div class="blog-media">
+                                        <img src="images/blog/blog_2.jpg" alt="">
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3>Expedita Distinctio</h3>
+                                        <p>July 24th, 2016</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="blog-item style-7">
+                                <a href="blog-detail.html">
+                                    <div class="blog-media">
+                                        <img src="images/blog/blog_3.jpg" alt="">
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3>Maecenas Augue</h3>
+                                        <p>July 24th, 2016</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {!% include 'comment/list.twig' %!}
+                    {!% include 'comment/form.twig' %!}
+
+                </div>
+
+                {% include'elements/sidebar.twig' %}
+
+            </div>
+        </div>
+    </div>
+
+    {!% include 'nav.twig' %!}
+{% endblock %}
+
+{% block script %}
+{% endblock %}

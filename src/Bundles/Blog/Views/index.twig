@@ -1,0 +1,82 @@
+{% extends "default.twig" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+    <div id="main">
+        <div class="section border-top border-bottom bg-pink-light pt-2 pb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span class="page-title">Blog Wide 1 Right Sidebar</span>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-right">
+                            <span class="breadcrumb">Blog / breadcum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section mt-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+
+                        <div class="blog-item quote">
+                            <a href="blog-detail.html">
+                                <i class="fa fa-quote-right"></i>
+                                <div class="quote-content">
+                                    <p>Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.</p>
+                                </div>
+                                <div class="quote-author">Albert Einstein</div>
+                            </a>
+                        </div>
+
+                        {% for post in posts %}
+                            <div class="blog-item style-5">
+                                <div class="blog-media">
+                                    <img src="images/blog/blog_848x565.jpg" alt="">
+                                </div>
+                                <div class="blog-content">
+                                    <h3><a href="{{ path('blog.show', {slug: post.slug, id: post.id}) }}">{{ post.title }}</a></h3>
+                                    <p>
+                                        {{ post.content }}
+                                    </p>
+                                </div>
+                                <div class="blog-info">
+                                    <div class="date">
+                                        <i class="fa fa-calendar"></i>
+                                        {{ post.updated_at }}
+                                    </div>
+                                    <div class="author">
+                                        <i class="fa fa-user"></i>
+                                        De {{ post.author }}
+                                    </div>
+                                    <div class="comment">
+                                        <i class="fa fa-comment-o"></i>
+                                        3
+                                    </div>
+                                    <div class="tag">
+                                        <i class="fa fa-tag"></i>
+                                        <a href="#">Nature</a>,<a href="#">Travel</a>
+                                    </div>
+                                    <a class="readmore" href="">Lire la suite...</a>
+                                </div>
+                            </div>
+                        {% endfor%}
+
+                        {% include 'elements/pagination.twig' %}
+
+                    </div>
+                    {% include 'elements/sidebar.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
