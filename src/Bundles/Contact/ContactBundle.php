@@ -4,6 +4,7 @@ namespace Bundles\Contact;
 
 use Core\Routing\Router;
 use Core\Renderer\RendererInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Class ContactBundle
@@ -23,9 +24,10 @@ class ContactBundle
      * ContactBundle constructor.
      * @param Router $router
      */
-    public function __construct(string $prefix, Router $router, RendererInterface $renderer)
+    public function __construct(ContainerInterface $container)
     {
-        $renderer->addViewPath('contact', __DIR__ . '/Views');
-        $router->get($prefix . '/contact', ContactAction::class, 'contact.index');
+        $container->get(RendererInterface::class)->addViewPath('contact', __DIR__ . '/Views');
+        $router = $container->get(Router::class);
+        $router->get($container->get('contact.prefix') . '/contact', ContactAction::class, 'contact.index');
     }
 }

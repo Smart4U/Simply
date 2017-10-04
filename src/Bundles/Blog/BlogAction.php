@@ -27,12 +27,13 @@ class BlogAction
         if ($request->getAttribute('id')) {
             return $this->show($request);
         }
-        return $this->index();
+        return $this->index($request);
     }
 
-    public function index()
+    public function index(ServerRequestInterface $request)
     {
-        $posts = $this->postTable->findForPaginate();
+        $params = $request->getQueryParams();
+        $posts = $this->postTable->findForPaginate(10, $params['p'] ?? 1);
         return $this->renderer->render('@blog/index.twig', compact('posts'));
     }
 

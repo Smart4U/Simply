@@ -3,7 +3,8 @@
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 $bundles = [
-    \Bundles\Contact\ContactBundle::class,
+    \Bundles\Admin\AdminBundle::class,
+    \Bundles\Contact\ContactBundle::class,²
     \Bundles\Blog\BlogBundle::class
 ];
 

@@ -4,7 +4,9 @@ return [
     // SETTINGS
     'views.path' => dirname(__DIR__) . '/resources/views',
     'twig.extensions' => [
-        \DI\get(\Core\Twig\RouterTwigExtension::class)
+        \DI\get(\Core\Twig\RouterTwigExtension::class),
+        \DI\get(\Core\Twig\PagerFantaTwigExtension::class),
+        \DI\get(\Core\Twig\TextTwigExtension::class)
     ],
     // ROUTING
     \Core\Routing\Router::class => \DI\object(),
