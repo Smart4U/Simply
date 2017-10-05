@@ -1,0 +1,15 @@
+{% extends '@admin/dashboard.twig' %}
+
+
+{% block title %}Dashboard blog create{% endblock %}
+
+{% block content %}
+
+    <form action="{{ path('admin.blog.create') }}" method="POST">
+
+        {% include '@blog/admin/form.twig' %}
+        <button type="submit">valider</button>
+    </form>
+
+
+{% endblock %}

@@ -4,7 +4,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $bundles = [
     \Bundles\Admin\AdminBundle::class,
-    \Bundles\Contact\ContactBundle::class,²
+    \Bundles\Contact\ContactBundle::class,
     \Bundles\Blog\BlogBundle::class
 ];
 

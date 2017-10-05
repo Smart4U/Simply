@@ -2,7 +2,6 @@
 
 namespace Core\Twig;
 
-
 class DateTimeTwigExtension extends \Twig_Extension
 {
 
@@ -16,8 +15,7 @@ class DateTimeTwigExtension extends \Twig_Extension
         ];
     }
 
-    public function ago(string $datetime, int $maxLength = 140) :string  {
-
+    public function ago(string $datetime, int $maxLength = 140) :string
+    {
     }
-
 }

@@ -2,9 +2,9 @@
 
 namespace Bundles\Blog;
 
+use Bundles\Blog\Table\PostTable;
 use Core\Routing\Router;
 use Core\Renderer\RendererInterface;
-use Core\Table\PostTable;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -41,7 +41,7 @@ class BlogAction
     {
         $post = $this->postTable->find($request->getAttribute('id'));
         if ($post->slug !== $request->getAttribute('slug')) {
-            return (new Response(301, ['location' => $this->router->generateUri('blog.show', ['slug' => $post->slug, 'id' => $post->id])], null, 1.1));
+            return (new Response(301, ['Location' => $this->router->generateUri('blog.show', ['slug' => $post->slug, 'id' => $post->id])], null, 1.1));
         }
         return $this->renderer->render('@blog/show.twig', compact('post'));
     }

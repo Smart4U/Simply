@@ -2,7 +2,6 @@
 
 namespace Core\Database;
 
-
 use Pagerfanta\Adapter\AdapterInterface;
 
 class PaginatedQuery implements AdapterInterface

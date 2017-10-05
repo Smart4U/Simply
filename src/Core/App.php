@@ -59,6 +59,13 @@ class App
     {
 
         $uri = $request->getUri()->getPath();
+        $parseBody = $request->getParsedBody();
+        if (array_key_exists('http_method', $parseBody) && in_array($parseBody['http_method'], ['PUT', 'PATCH', 'DELETE'])
+        ) {
+            $request = $request->withMethod($parseBody['http_method']);
+        }
+
+
         if ($uri[-1] === '/' && $uri !== '/') {
             return new Response(301, ['Location' => substr($uri, 0, -1)], null, 1.1);
         }

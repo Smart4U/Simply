@@ -2,7 +2,6 @@
 
 namespace Core\Twig;
 
-
 class TextTwigExtension extends \Twig_Extension
 {
 
@@ -21,7 +20,8 @@ class TextTwigExtension extends \Twig_Extension
      * @param int $maxLength
      * @return string
      */
-    public function excerpt(string $content, int $maxLength = 140) :string  {
+    public function excerpt(string $content, int $maxLength = 140) :string
+    {
         if (mb_strlen($content) > $maxLength) {
             $excerpt = mb_substr($content, 0, $maxLength);
             $lastSpace = mb_strrpos($excerpt, '');
@@ -29,5 +29,4 @@ class TextTwigExtension extends \Twig_Extension
         }
         return $content;
     }
-
 }

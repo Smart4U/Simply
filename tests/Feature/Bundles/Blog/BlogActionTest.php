@@ -4,12 +4,12 @@ namespace Tests\Feature\Bundles\Blog;
 
 
 use Bundles\Blog\BlogAction;
+use Bundles\Blog\Entity\Post;
+use Bundles\Blog\Table\PostTable;
 use Core\Renderer\RendererInterface;
 use Core\Routing\Router;
-use Core\Table\PostTable;
 use GuzzleHttp\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
-use Prophecy\Argument;
 
 class BlogActionTest extends TestCase
 {
@@ -32,8 +32,8 @@ class BlogActionTest extends TestCase
         );
     }
 
-    private function makePost(int $id, string $slug): \stdClass {
-        $post = new \stdClass();
+    private function makePost(int $id, string $slug): Post {
+        $post = new Post();
         $post->id = $id;
         $post->slug = $slug;
         return $post;

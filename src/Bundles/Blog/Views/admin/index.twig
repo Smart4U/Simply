@@ -1,0 +1,21 @@
+{% extends '@admin/dashboard.twig' %}
+
+
+{% block title %}Dashboard blog{% endblock %}
+
+{% block content %}
+
+    <a href="{{ path('admin.blog.create') }}">add article</a>
+
+                        {% for post in posts %}
+                            <a href="{{ path('admin.blog.edit', {id: post.id}) }}">editer</a>
+                            <form action="{{ path('admin.blog.delete', {id: post.id}) }}" method="POST" onsubmit="return confirm('Vous confirmer la suppression ?')">
+                                <input type="hidden" name="http_method" value="DELETE">
+                                <input type="submit" value="delete">
+                            </form>
+                        {% endfor %}
+
+                        {{ paginate(posts, 'admin.blog.index') }}
+
+
+{% endblock %}
