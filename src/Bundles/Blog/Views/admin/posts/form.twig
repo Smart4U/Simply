@@ -1,0 +1,7 @@
+{{ field('title', item.title, "Titre de l'article") }}
+{{ field('slug', item.slug, "Lien") }}
+{{ field('content', item.content, "content", {type: 'textarea'}) }}
+{{ field('created_at', item.created_at, "Date de création", {class: 'datepicker'}) }}
+
+
+{{ dump(errors) }}
