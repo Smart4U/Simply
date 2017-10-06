@@ -1,3 +1,10 @@
-<input type="text" name="title" value="{{ item.title }}">
+<div class="form-group">
+    <input type="text" name="title" id="title" value="{{ item.title }}">
+    {{ dump(errors) }}
+</div>
+<div class="form-group">
 <input type="text" name="slug" value="{{ item.slug }}">
+</div>
+<div class="form-group">
 <textarea name="content" id="" cols="30" rows="10">{{ item.content }}</textarea>
+</div>

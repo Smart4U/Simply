@@ -5,6 +5,7 @@ return [
     'views.path' => dirname(__DIR__) . '/resources/views',
     'twig.extensions' => [
         \DI\get(\Core\Twig\RouterTwigExtension::class),
+        \DI\get(\Core\Twig\FlashTwigExtension::class),
         \DI\get(\Core\Twig\PagerFantaTwigExtension::class),
         \DI\get(\Core\Twig\TextTwigExtension::class)
     ],
@@ -25,5 +26,11 @@ return [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]);
-    }
+    },
+
+    // SESSION
+    \Core\Session\SessionInterface::class => \DI\object(\Core\Session\Session::class),
+
+    // NOTIFICATION
+    \Core\Notify\Flash::class => \DI\object()
 ];
